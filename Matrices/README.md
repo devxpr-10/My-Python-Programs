@@ -28,7 +28,7 @@ A lightweight, pure Python implementation of a Matrix class with support for lin
 Simply copy `matrix.py` to your project:
 
 ```bash
-git clone <repository>
+git clone "https://github.com/devxpr-10/My-Python-Programs"
 cd Matrices
 ```
 
@@ -203,11 +203,3 @@ rotated = rotation * point
 - Limited to numerical computations
 - No built-in matrix decomposition (LU, QR, SVD)
 - Singular matrices (det = 0) cannot be inverted
-
-## Contributing
-
-Feel free to fork, improve, and submit pull requests!
-
-## License
-
-MIT License - feel free to use in your projects
