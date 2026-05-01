@@ -1,7 +1,8 @@
 from __future__ import annotations
 from collections.abc import Sequence
 
-def identity(n: int) -> Matrix:
+"""Matrix operations and computations"""
+def identity(n: int):
     l = []
     for r in range(n):
         t = []
@@ -69,6 +70,7 @@ class Matrix:
     def adjoint(self):
         if not self.isSquare:
             raise ValueError("Adjoint only exists for square matrix")
+        # Adjoint is the transpose of the cofactor matrix
         return self.cofactor_mat().transpose()
 
     def inverse(self):
@@ -77,6 +79,7 @@ class Matrix:
             raise ValueError("Inverse not supported for singular matrices (det = 0)")
         if self.order == (1, 1):
             return Matrix([[1/self[0][0]]])
+        # Using adjoint method: A^-1 = adj(A) / det(A)
         return self.adjoint() / det
 
     def det(self):
@@ -183,13 +186,6 @@ class Matrix:
     def __getitem__(self, key): return self.data[key]
     def __contains__(self, item): return any(item in row for row in self.data)
     def __len__(self): return self.ncols * self.nrows
-    # def __pow__(self, other: int | float):
-    #     if other == -1:
-    #         return self.inverse()
-    #     elif other == 0 and self.isSquare:
-    #         return identity(self.ncols)
-    #     elif other > 0:
-    #         ...
     def __iter__(self):
         for row in self.data:
             for e in row:
@@ -208,15 +204,3 @@ class Matrix:
 
     def __str__(self):
         return "\n".join("  ".join(' ' + str(n) for n in row) for row in self.data)
-
-if __name__ == '__main__':
-    mat1 = Matrix([[3, 3],
-                  [2, 3],
-                  [6, 4]])
-    mat2 = Matrix([[2, 1, 4],
-                  [53, 24, 5]])
-    # mat2.subtract(mat1)
-    # print(mat1.inverse())
-    # print(0 in mat1)
-    # print((mat1*2) == (mat1+mat1))
-    print(mat1 ** 2)
