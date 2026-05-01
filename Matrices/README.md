@@ -4,19 +4,19 @@ A lightweight, pure Python implementation of a Matrix class with support for lin
 
 ## Features
 
-✨ **Core Operations**
+ **Core Operations**
 - Matrix arithmetic: addition, subtraction, multiplication, and division
 - Transpose and determinant computation
 - Matrix inverse calculation
 - Adjoint and cofactor matrices
 - Element-wise access and iteration
 
-🔧 **Utility Functions**
+ **Utility Functions**
 - `identity(n)` - Create n×n identity matrix
 - `zeros(rows, cols)` - Create zero matrix
 - `ones(rows, cols)` - Create matrix filled with ones
 
-🎯 **Special Methods**
+ **Special Methods**
 - `minor()` & `minor_mat()` - Compute minors
 - `cofactor()` & `cofactor_mat()` - Cofactor calculations
 - `adjoint()` - Adjoint matrix
